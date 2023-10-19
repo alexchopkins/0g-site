@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Manchester - Websites by Alex</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #292b2c;
+            color: #fff;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4em;
+            position: relative;
+        }
+
+        section:nth-child(odd) {
+            background-color: #343a40;
+        }
+
+        section:nth-child(even) {
+            background-color: #292b2c;
+        }
+
+        h1, h2 {
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+
+        .portfolio-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 1em;
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .arrow:hover {
+            color: #18bc9c;
+        }
+    </style>
+</head>
+<body>
+    <section id="title">
+        <h1>Websites by Alex</h1>
+        <p>Creating Beautiful & Functional Websites</p>
+        <div class="arrow" id="arrow-down">&#8595;</div>
+    </section>
+
+    <section id="about">
+        <div class="arrow" id="arrow-up">&#8593;</div>
+        <h2>About Us</h2>
+        <p>Welcome to Websites by Alex, where we turn your ideas into beautiful, functional websites. Our Manchester-based team is dedicated to providing top-notch web design services tailored to your needs.</p>
+    </section>
+
+    <section id="services">
+        <div class="arrow" id="arrow-up">&#8593;</div>
+        <h2>Our Services</h2>
+        <ul>
+            <li>Custom Website Design</li>
+            <li>Responsive Web Development</li>
+            <li>E-commerce Solutions</li>
+            <li>Search Engine Optimization (SEO)</li>
+            <li>Website Maintenance</li>
+        </ul>
+    </section>
+
+    <section id="prices">
+        <div class="arrow" id="arrow-up">&#8593;</div>
+        <h2>Prices</h2>
+        <p>Our pricing is competitive and transparent. Contact us for a customized quote based on your project requirements.</p>
+    </section>
+
+    <section id="portfolio">
+        <div class="arrow" id="arrow-up">&#8593;</div>
+        <h2>Portfolio</h2>
+        <div class="portfolio-images">
+            <img src="project1.jpg" alt="Project 1">
+            <img src="project2.jpg" alt="Project 2">
+            <img src="project3.jpg" alt="Project 3">
+        </div>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach((section, index) => {
+            section.querySelector('.arrow').addEventListener('click', function() {
+                if (this.id === 'arrow-down') {
+                    let nextSection = sections[index + 1] || sections[0];
+                    window.location.hash = nextSection.id;
+                } else {
+                    let prevSection = sections[index - 1] || sections[sections.length - 1];
+                    window.location.hash = prevSection.id;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
