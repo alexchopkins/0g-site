@@ -1,0 +1,29 @@
+# Create a new HTML file
+html_code = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites by Alex</title>
+</head>
+<body>
+    <header>
+        <h1>Test using Python ran from Mac terminal shell</h1>
+    </header>
+    <main>
+        <p>Welcome to Websites by Alex!</p>
+        <!-- Add more content here -->
+    </main>
+    <footer>
+        <p>&copy; 2023 Alex</p>
+    </footer>
+</body>
+</html>
+'''
+
+# Write the HTML code to a file
+with open('websites_by_alex.html', 'w') as file:
+    file.write(html_code)
+
+print("HTML file 'websites_by_alex.html' created successfully!")
